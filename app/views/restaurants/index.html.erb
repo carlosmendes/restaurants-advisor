@@ -1,0 +1,17 @@
+<h1>Restaurants <%= @restaurants.count %></h1>
+
+<p><%= link_to 'Create New', new_restaurant_path %></p>
+
+<% @restaurants.each do |r| %>
+	<h2><%= r.name %></h2>
+	<p><%= r.address %></p>
+	<p><%= '*' * r.stars unless r.stars.nil? %></p>
+	<!-- Option 1 Raw html -->
+	<!-- <p><%= link_to 'Show', 'restaurants/#{r.id}' %></p> -->
+	<!-- Option 2 -->
+	<!-- <p><%= link_to 'Show', restaurant_path(id: r.id) %></p> -->
+	<!-- Option 3 Lazy way -->
+	<!-- <p><%= link_to 'Show', r %></p> -->
+	<!-- Rails way!! use this bellow -->
+	<p><%= link_to 'Show', restaurant_path(r), class: 'btn btn-lg' %></p>
+<% end %>

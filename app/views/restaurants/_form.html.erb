@@ -1,0 +1,27 @@
+
+<%= form_for @restaurant do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, placeholder: 'Name' %>
+	<%= f.text_field :address, placeholder: 'Address' %>
+	<%= f.number_field :stars, placeholder: 'Stars' %>
+	<%= f.submit %>
+<% end %>
+
+<!-- Create New Raw HTML -->
+<!-- <form action="/restaurants" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+	<input type="text" name="restaurant[name]" placeholder="Name">
+	<input type="text" name="restaurant[address]" placeholder="Address">
+	<input type="number" name="restaurant[stars]" placeholder="Stars">
+	<input type="submit" value="Create Restaurant">
+</form> -->
+
+<!-- Edit Raw HTML -->
+<!-- <form action="/restaurants/<%= @restaurant.id%>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+	<input type="text" name="restaurant[name]" placeholder="Name" value="<%= @restaurant.name %>">
+	<input type="text" name="restaurant[address]" placeholder="Address" value="<%= @restaurant.address %>">
+	<input type="number" name="restaurant[stars]" placeholder="Stars" value="<%= @restaurant.stars %>">
+	<input type="submit" value="Edit Restaurant">
+</form> -->

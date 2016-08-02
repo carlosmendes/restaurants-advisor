@@ -1,0 +1,12 @@
+<h1>Restaurant '<%= @restaurant.name %>'</h1>
+
+<p><%= @restaurant.address %></p>
+
+<p><%= '*' * @restaurant.stars unless @restaurant.stars.nil? %></p>
+
+<p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+
+<p><%= link_to 'DELETE', restaurant_path(@restaurant), method: :delete %></p>
+
+<!-- Old way<p><%= link_to 'List All', '/restaurants' %></p> -->
+<p><%= link_to 'List All', restaurants_path %></p>
